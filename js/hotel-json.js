@@ -1,12 +1,12 @@
-var firebaseConfig = {
-  apiKey: "AIzaSyAzcwgZuLA7dO9g4sQhXQVTUgCo0M8m2qM",
-  authDomain: "grocerylist-91956.firebaseapp.com",
-  databaseURL: "https://grocerylist-91956.firebaseio.com",
-  projectId: "grocerylist-91956",
-  storageBucket: "grocerylist-91956.appspot.com",
-  messagingSenderId: "813812426276",
-  appId: "1:813812426276:web:93e5897af12892ff78dab1",
-  measurementId: "G-VZ83BTR72T"
+const firebaseConfig = {
+  apiKey: "AIzaSyBxp6X1OSsbS_VRxIlZDXC3cLE1OffbKCE",
+  authDomain: "grocerylist-6f38e.firebaseapp.com",
+  databaseURL: "https://grocerylist-6f38e.firebaseio.com",
+  projectId: "grocerylist-6f38e",
+  storageBucket: "grocerylist-6f38e.appspot.com",
+  messagingSenderId: "389435855205",
+  appId: "1:389435855205:web:2667f96e169ad872cc918c",
+  measurementId: "G-MTSB5QWTT1"
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
@@ -54,16 +54,12 @@ firebase
   .onSnapshot(function(querySnapshot) {
     //console.log(querySnapshot);
     console.log(querySnapshot.size);
-    querySnapshot.forEach(doc =>{
+    querySnapshot.forEach(doc => {
       console.log(doc.data());
-    //  var roomtype= doc.data().room;
-    //   if (roomtype =="1 Bedroom Smaller Suite $169"){
-    //     do sth
-    //   console.log("This roomtype");
-    //  }
-   
-
-      
+      //  var roomtype= doc.data().room;
+      //   if (roomtype =="1 Bedroom Smaller Suite $169"){
+      //     do sth
+      //   console.log("This roomtype");
+      //  }
     });
-
   });

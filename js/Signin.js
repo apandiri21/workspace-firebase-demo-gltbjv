@@ -12,28 +12,33 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 // save the data
-$("#signup-form").submit(function(e) {
+$("#Login").submit(function(e) {
   e.preventDefault();
-  //get the username(email) and password from the form
-  // change the following code
+  // get the user name and password from form
+  // You need to change this.
   var email = document.getElementById("username").val();
   var password = document.getElementById("password").val();
-
-  // create a user with email address and password
   firebase
     .auth()
-    .createUserWithEmailAndPassword(email, password)
-    .then(user => {
+    .signInWithEmailAndPassword(email, password)
+    .then(success => {
       // Signed in
       // ...
+      console.log("login in");
+      let user = firebase.auth().currentUser;
 
-      console.log("You are signed up");
-      window.location.href = "Login.html";
+      //user.updateProfile({ displayName: "Not sure" });
+      if (user != null) {
+        name = user.displayName;
+        email = user.email;
+        photoUrl = user.photoURL;
+        emailVerified = user.emailVerified;
+        console.log(name + email + emailVerified);
+      }
     })
     .catch(error => {
       var errorCode = error.code;
       var errorMessage = error.message;
-      console.log(error.code);
       console.log(errorMessage);
     });
 });
