@@ -37,7 +37,7 @@ $("input[type='button']").click(function(e) {
   /* save the data to database */
   firebase
     .firestore()
-    .collection("hoteldata") // use different name
+    .collection("surveyresult") // use different name
     .add(inputJson);
 
   /* clear the entry */
@@ -53,7 +53,7 @@ array1.forEach(element => console.log(element));
 
 firebase
   .firestore()
-  .collection("hoteldata")
+  .collection("surveyresult")
   .onSnapshot(function(querySnapshot) {
     //console.log(querySnapshot);
     console.log(querySnapshot.size);
